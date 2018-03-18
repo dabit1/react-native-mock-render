@@ -72,7 +72,7 @@ networkInfo=_extends({},networkInfo,{connected:connected});
 }return __setIsConnected;}(),
 
 __setConnectionInfo:function(){function __setConnectionInfo(properties){
-networkInfo=_extends({},connectionInfo,properties);
+connectionInfo=_extends({},connectionInfo,properties);
 }return __setConnectionInfo;}(),
 
 getConnectionInfo:function(){function getConnectionInfo(){
