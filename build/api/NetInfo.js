@@ -11,6 +11,10 @@ var isExpensive=false;
 var networkInfo={
 connected:true};
 
+var connectionInfo={
+type:'wifi',
+effectiveType:'unknown'};
+
 
 
 var NetInfo={
@@ -67,8 +71,12 @@ __setIsConnected:function(){function __setIsConnected(connected){
 networkInfo=_extends({},networkInfo,{connected:connected});
 }return __setIsConnected;}(),
 
+__setConnectionInfo:function(){function __setConnectionInfo(properties){
+networkInfo=_extends({},connectionInfo,properties);
+}return __setConnectionInfo;}(),
+
 getConnectionInfo:function(){function getConnectionInfo(){
-return Promise.resolve({type:'wifi',effectiveType:'unknown'});
+return Promise.resolve(connectionInfo);
 }return getConnectionInfo;}()};
 
 
