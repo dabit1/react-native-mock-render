@@ -72,7 +72,7 @@ const NetInfo = {
   },
 
   __setConnectionInfo(properties) {
-    networkInfo = Object.assign({}, connectionInfo, properties);
+    connectionInfo = Object.assign({}, connectionInfo, properties);
   },
 
   getConnectionInfo() {
