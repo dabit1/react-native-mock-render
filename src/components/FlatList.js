@@ -125,7 +125,7 @@ const FlatList = createReactClass({
 
   _getChildren() {
     return this.props.data.map((item, index) =>
-      this.renderItem({
+      this.props.renderItem({
         item,
         index,
         separators: {

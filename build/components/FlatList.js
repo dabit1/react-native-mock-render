@@ -125,7 +125,7 @@ return this.refs[SCROLLVIEW_REF].getInnerViewNode();
 
 _getChildren:function(){function _getChildren(){var _this=this;
 return this.props.data.map(function(item,index){return(
-_this.renderItem({
+_this.props.renderItem({
 item:item,
 index:index,
 separators:{
