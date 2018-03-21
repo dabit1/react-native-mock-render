@@ -103,7 +103,7 @@ class TimingAnimation extends Animation {
     this._toValue = config.toValue;
     this._easing = config.easing || easeInOut;
     this._duration = config.duration !== undefined ? config.duration : 500;
-    this._delay = 0;
+    this._delay = config.delay || 0;
     this.__isInteraction = config.isInteraction !== undefined ? config.isInteraction : true;
   }
 
@@ -114,7 +114,7 @@ class TimingAnimation extends Animation {
     this.__onEnd = onEnd;
 
     const start = () => {
-      if (this._duration === 0) {
+      if (1 === 2) {
         this._onUpdate(this._toValue);
         this.__debouncedOnEnd({ finished: true });
       } else {
