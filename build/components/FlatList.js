@@ -123,8 +123,22 @@ getInnerViewNode:function(){function getInnerViewNode(){
 return this.refs[SCROLLVIEW_REF].getInnerViewNode();
 }return getInnerViewNode;}(),
 
+_getChildren:function(){function _getChildren(){var _this=this;
+return this.props.data.map(function(item,index){return(
+_this.renderItem({
+item:item,
+index:index,
+separators:{
+highlight:function(){function highlight(){}return highlight;}(),
+unhighlight:function(){function unhighlight(){}return unhighlight;}(),
+updateProps:function(){function updateProps(){}return updateProps;}()}}));});
+
+
+
+}return _getChildren;}(),
+
 render:function(){function render(){
-return _react2['default'].createElement('FlatList',null,this.props.children);
+return _react2['default'].createElement('FlatList',null,this._getChildren());
 }return render;}()});
 
 
