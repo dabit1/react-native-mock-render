@@ -8,6 +8,7 @@ import View from './View';
 import Text from './Text';
 
 const TextInput = createReactClass({
+  displayName: 'TextInput',
   propTypes: {
     ...View.propTypes,
     /**
@@ -242,7 +243,7 @@ const TextInput = createReactClass({
 
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('TextInput', null, this.props.children);
   },
 });
 

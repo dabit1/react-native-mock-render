@@ -8,6 +8,7 @@ import createReactClass from 'create-react-class';
 import TouchableWithoutFeedback from './TouchableWithoutFeedback';
 
 const TouchableOpacity = createReactClass({
+  displayName: 'TouchableOpacity',
   propTypes: {
     ...TouchableWithoutFeedback.propTypes,
 
@@ -19,7 +20,7 @@ const TouchableOpacity = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('TouchableOpacity', null, this.props.children);
   },
 });
 

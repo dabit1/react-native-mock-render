@@ -8,6 +8,7 @@ import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import View from './View';
 
 const TouchableWithoutFeedback = createReactClass({
+  displayName: 'TouchableWithoutFeedback',
   propTypes: {
     accessible: PropTypes.bool,
     accessibilityComponentType: PropTypes.oneOf(View.AccessibilityComponentType),
@@ -67,7 +68,7 @@ const TouchableWithoutFeedback = createReactClass({
     children: PropTypes.node
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('TouchableWithoutFeedback', null, this.props.children);
   },
 });
 

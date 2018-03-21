@@ -11,6 +11,7 @@ import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 const stylePropType = styleSheetPropType(TextStylePropTypes);
 
 const Text = createReactClass({
+  displayName: 'Text',
   propTypes: {
     /**
      * Used to truncate the text with an ellipsis after computing the text
@@ -49,7 +50,7 @@ const Text = createReactClass({
   mixins: [NativeMethodsMixin],
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('Text', null, this.props.children);
   },
 });
 

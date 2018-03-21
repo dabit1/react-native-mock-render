@@ -20,6 +20,7 @@ const NavigationType = {
 const JSNavigationScheme = WebViewManager.JSNavigationScheme;
 
 const WebView = createReactClass({
+  displayName: 'WebView',
   propTypes: {
     ...View.propTypes,
     url: PropTypes.string,
@@ -138,7 +139,7 @@ const WebView = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('WebView', null, this.props.children);
   },
 });
 

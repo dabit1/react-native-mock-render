@@ -10,6 +10,7 @@ const SCROLLVIEW_REF = 'listviewscroll';
 
 
 const ListView = createReactClass({
+  displayName: 'ListView',
   propTypes: {
     ...ScrollView.propTypes,
 
@@ -161,7 +162,7 @@ const ListView = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('ListView', null, this.props.children);
   },
 });
 

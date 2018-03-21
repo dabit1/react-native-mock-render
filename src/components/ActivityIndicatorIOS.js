@@ -8,6 +8,7 @@ import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 
 const ActivityIndicatorIOS = createReactClass({
+  displayName: 'ActivityIndicatorIOS',
   propTypes: {
     ...View.propTypes,
     /**
@@ -40,7 +41,7 @@ const ActivityIndicatorIOS = createReactClass({
   mixins: [NativeMethodsMixin],
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('ActivityIndicatorIOS', null, this.props.children);
   },
 });
 

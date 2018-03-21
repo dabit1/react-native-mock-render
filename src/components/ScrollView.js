@@ -13,6 +13,7 @@ const SCROLLVIEW = 'ScrollView';
 const INNERVIEW = 'InnerScrollView';
 
 const ScrollView = createReactClass({
+  displayName: 'ScrollView',
   propTypes: {
     ...View.propTypes,
     /**
@@ -317,7 +318,7 @@ const ScrollView = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('ScrollView', null, this.props.children);
   },
 });
 

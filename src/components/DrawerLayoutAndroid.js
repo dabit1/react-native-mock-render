@@ -12,6 +12,7 @@ import ColorPropType from '../propTypes/ColorPropType';
 const DrawerConsts = UIManager.AndroidDrawerLayout.Constants;
 
 const DrawerLayoutAndroid = createReactClass({
+  displayName: 'DrawerLayoutAndroid',
 
   propTypes: {
     ...View.propTypes,
@@ -108,7 +109,7 @@ const DrawerLayoutAndroid = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('DrawerLayoutAndroid', null, this.props.children);
   }
 
 });

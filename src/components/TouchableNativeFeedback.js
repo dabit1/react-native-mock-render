@@ -5,6 +5,7 @@ import createReactClass from 'create-react-class';
 import TouchableWithoutFeedback from './TouchableWithoutFeedback';
 
 const TouchableNativeFeedback = createReactClass({
+  displayName: 'TouchableNativeFeedback',
   propTypes: {
     ...TouchableWithoutFeedback.propTypes,
 
@@ -17,7 +18,7 @@ const TouchableNativeFeedback = createReactClass({
     Ripple(color, borderless) {}
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('TouchableNativeFeedback', null, this.props.children);
   }
 });
 

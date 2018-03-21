@@ -51,6 +51,7 @@ const statics = {
 };
 
 const View = createReactClass({
+  displayName: 'View',
   propTypes: {
     /**
      * When true, indicates that the view is an accessibility element. By default,
@@ -283,7 +284,7 @@ const View = createReactClass({
   },
 
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('View', null, this.props.children);
   },
 });
 

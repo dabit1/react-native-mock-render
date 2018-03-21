@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import createMockComponent from './createMockComponent';
 
 const Picker = createReactClass({
+  displayName: 'Picker',
   propTypes: {
     children: PropTypes.node
   },
@@ -12,7 +13,7 @@ const Picker = createReactClass({
     Item: createMockComponent('Picker.Item')
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('Picker', null, this.props.children);
   }
 });
 

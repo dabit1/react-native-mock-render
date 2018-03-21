@@ -11,6 +11,7 @@ import ImageStylePropTypes from '../propTypes/ImageStylePropTypes';
 import ImageResizeMode from '../propTypes/ImageResizeMode';
 
 const ImageBackground = createReactClass({
+  displayName: 'ImageBackground',
   propTypes: {
     style: styleSheetPropType(ImageStylePropTypes),
     /**
@@ -121,7 +122,7 @@ const ImageBackground = createReactClass({
     }
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('ImageBackground', null, this.props.children);
   },
 });
 

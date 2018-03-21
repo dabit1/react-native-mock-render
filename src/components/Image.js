@@ -11,6 +11,7 @@ import ImageStylePropTypes from '../propTypes/ImageStylePropTypes';
 import ImageResizeMode from '../propTypes/ImageResizeMode';
 
 const Image = createReactClass({
+  displayName: 'Image',
   propTypes: {
     style: styleSheetPropType(ImageStylePropTypes),
     /**
@@ -121,7 +122,7 @@ const Image = createReactClass({
     }
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('Image', null, this.props.children);
   },
 });
 

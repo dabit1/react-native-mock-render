@@ -26,6 +26,7 @@ const NavigatorSceneConfigs = {
 };
 
 const Navigator = createReactClass({
+  displayName: 'Navigator',
   propTypes: {
     /**
      * Optional function that allows configuration about scene animations and
@@ -100,7 +101,7 @@ const Navigator = createReactClass({
     SceneConfigs: NavigatorSceneConfigs,
   },
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('Navigator', null, this.props.children);
   }
 });
 

@@ -9,6 +9,7 @@ import View from './View';
 import ColorPropType from '../propTypes/ColorPropType';
 
 const ActivityIndicator = createReactClass({
+  displayName: 'ActivityIndicator',
   propTypes: {
     ...View.propTypes,
     /**
@@ -39,7 +40,7 @@ const ActivityIndicator = createReactClass({
   },
   mixins: [NativeMethodsMixin],
   render() {
-    return React.createElement('react-native-mock', null, this.props.children);
+    return React.createElement('ActivityIndicator', null, this.props.children);
   },
 });
 
