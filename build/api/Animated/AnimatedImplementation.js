@@ -4,7 +4,22 @@ var _Easing=require('./Easing');var _Easing2=_interopRequireDefault(_Easing);
 var _InteractionManager=require('../InteractionManager');var _InteractionManager2=_interopRequireDefault(_InteractionManager);
 var _SpringConfig=require('./SpringConfig');var _SpringConfig2=_interopRequireDefault(_SpringConfig);
 var _raf=require('raf');var _raf2=_interopRequireDefault(_raf);
-var _flattenStyle=require('../../propTypes/flattenStyle');var _flattenStyle2=_interopRequireDefault(_flattenStyle);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var
+var _flattenStyle=require('../../propTypes/flattenStyle');var _flattenStyle2=_interopRequireDefault(_flattenStyle);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}
+
+// vars to modify for a tests
+var testingVars={
+duration:null};
+
+
+var testingMethods={
+__setDuration:function(){function __setDuration(value){
+testingVars.duration=value;
+}return __setDuration;}(),
+
+__restoreDuration:function(){function __restoreDuration(){
+testingVars.duration=null;
+}return __restoreDuration;}()};var
+
 
 Animated=function(){function Animated(){_classCallCheck(this,Animated);}_createClass(Animated,[{key:'__attach',value:function(){function __attach()
 {}return __attach;}()},{key:'__detach',value:function(){function __detach()
@@ -114,7 +129,8 @@ this._onUpdate=onUpdate;
 this.__onEnd=onEnd;
 
 var start=function(){function start(){
-if(1===2){
+var duration=testingVars.duration!==null?testingVars.duration:_this3._duration;
+if(duration===0){
 _this3._onUpdate(_this3._toValue);
 _this3.__debouncedOnEnd({finished:true});
 }else{
@@ -131,8 +147,10 @@ start();
 
 {
 var now=Date.now();
-if(now>=this._startTime+this._duration){
-if(this._duration===0){
+var duration=testingVars.duration!==null?testingVars.duration:this._duration;
+
+if(now>=this._startTime+duration){
+if(duration===0){
 this._onUpdate(this._toValue);
 }else{
 this._onUpdate(
@@ -145,7 +163,7 @@ return;
 
 this._onUpdate(
 this._fromValue+
-this._easing((now-this._startTime)/this._duration)*(
+this._easing((now-this._startTime)/duration)*(
 this._toValue-this._fromValue));
 
 if(this.__active){
@@ -1161,7 +1179,7 @@ config.listener.apply(null,args);
 };
 }
 
-var AnimatedImplementation={
+var AnimatedImplementation=_extends({
 Value:AnimatedValue,
 ValueXY:AnimatedValueXY,
 decay:decay,
@@ -1172,13 +1190,14 @@ multiply:multiply,
 sequence:sequence,
 parallel:parallel,
 stagger:stagger,
-event:event,
+event:event},
 
+testingMethods,{
 __PropsOnlyForTests:AnimatedProps,
 __Animated:Animated,
 __Animation:Animation,
 __AnimatedWithChildren:AnimatedWithChildren,
-__AnimatedStyle:AnimatedStyle};
+__AnimatedStyle:AnimatedStyle});
 
 
 module.exports=AnimatedImplementation;
