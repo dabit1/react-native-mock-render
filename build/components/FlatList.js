@@ -123,7 +123,7 @@ getInnerViewNode:function(){function getInnerViewNode(){
 return this.refs[SCROLLVIEW_REF].getInnerViewNode();
 }return getInnerViewNode;}(),
 
-_getChildren:function(){function _getChildren(){var _this=this;
+_renderChildren:function(){function _renderChildren(){var _this=this;
 return this.props.data.map(function(item,index){return(
 _this.props.renderItem({
 item:item,
@@ -135,10 +135,10 @@ updateProps:function(){function updateProps(){}return updateProps;}()}}));});
 
 
 
-}return _getChildren;}(),
+}return _renderChildren;}(),
 
 render:function(){function render(){
-return _react2['default'].createElement('FlatList',null,this._getChildren());
+return _react2['default'].createElement('FlatList',null,this._renderChildren());
 }return render;}()});
 
 

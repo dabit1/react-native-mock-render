@@ -260,8 +260,22 @@ getInnerViewNode:function(){function getInnerViewNode(){
 return this.refs[SCROLLVIEW_REF].getInnerViewNode();
 }return getInnerViewNode;}(),
 
+_renderChildren:function(){function _renderChildren(){var _this=this;
+return this.props.data.map(function(item,index){return(
+_this.props.renderItem({
+item:item,
+index:index,
+separators:{
+highlight:function(){function highlight(){}return highlight;}(),
+unhighlight:function(){function unhighlight(){}return unhighlight;}(),
+updateProps:function(){function updateProps(){}return updateProps;}()}}));});
+
+
+
+}return _renderChildren;}(),
+
 render:function(){function render(){
-return _react2['default'].createElement('VirtualizedList',null,this.props.children);
+return _react2['default'].createElement('VirtualizedList',null,this._renderChildren());
 }return render;}()});
 
 
