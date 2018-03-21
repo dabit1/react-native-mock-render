@@ -74,10 +74,6 @@ __setConnectionInfo:function(){function __setConnectionInfo(properties){
 connectionInfo=_extends({},connectionInfo,properties);
 }return __setConnectionInfo;}(),
 
-__setConnectionInfo:function(){function __setConnectionInfo(properties){
-connectionInfo=_extends({},connectionInfo,properties);
-}return __setConnectionInfo;}(),
-
 getConnectionInfo:function(){function getConnectionInfo(){
 return Promise.resolve(connectionInfo);
 }return getConnectionInfo;}()};
