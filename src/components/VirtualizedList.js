@@ -260,8 +260,22 @@ const VirtualizedList = createReactClass({
     return this.refs[SCROLLVIEW_REF].getInnerViewNode();
   },
 
+  _renderChildren() {
+    return this.props.data.map((item, index) =>
+      this.props.renderItem({
+        item,
+        index,
+        separators: {
+          highlight: () => {},
+          unhighlight: () => {},
+          updateProps: () => {},
+        },
+      })
+    );
+  },
+
   render() {
-    return React.createElement('VirtualizedList', null, this.props.children);
+    return React.createElement('VirtualizedList', null, this._renderChildren());
   },
 });
 

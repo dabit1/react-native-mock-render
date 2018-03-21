@@ -123,7 +123,7 @@ const FlatList = createReactClass({
     return this.refs[SCROLLVIEW_REF].getInnerViewNode();
   },
 
-  _getChildren() {
+  _renderChildren() {
     return this.props.data.map((item, index) =>
       this.props.renderItem({
         item,
@@ -138,7 +138,7 @@ const FlatList = createReactClass({
   },
 
   render() {
-    return React.createElement('FlatList', null, this._getChildren());
+    return React.createElement('FlatList', null, this._renderChildren());
   },
 });
 
