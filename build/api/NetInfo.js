@@ -70,6 +70,9 @@ isExpensive=expensive;
 __setIsConnected:function(){function __setIsConnected(connected){
 networkInfo=_extends({},networkInfo,{connected:connected});
 }return __setIsConnected;}(),
+__setConnectionInfo:function(){function __setConnectionInfo(properties){
+connectionInfo=_extends({},connectionInfo,properties);
+}return __setConnectionInfo;}(),
 
 __setConnectionInfo:function(){function __setConnectionInfo(properties){
 connectionInfo=_extends({},connectionInfo,properties);

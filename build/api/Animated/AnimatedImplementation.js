@@ -103,7 +103,7 @@ function TimingAnimation(config){_classCallCheck(this,TimingAnimation);var _this
 _this2._toValue=config.toValue;
 _this2._easing=config.easing||easeInOut;
 _this2._duration=config.duration!==undefined?config.duration:500;
-_this2._delay=config.delay||0;
+_this2._delay=0;
 _this2.__isInteraction=config.isInteraction!==undefined?config.isInteraction:true;return _this2;
 }_createClass(TimingAnimation,[{key:'start',value:function(){function start(
 
